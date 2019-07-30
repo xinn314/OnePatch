@@ -1,2 +1,2 @@
-# OneTools
-Tools
+# OneTool
+A quick tool
