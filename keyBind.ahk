@@ -65,9 +65,7 @@ Return
 #if GetKeyState("Capslock", "P")
 
 ; 快捷搜索
-q::
-QuickSearchBar()
-return
+q:: SendInput,^{space}
 
 ; vim 模式 Capslock + hjkl (left, down, up, right)
 k:: SendInput,{Up}
@@ -87,6 +85,9 @@ Enter::
 SendInput,{End}
 SendInput,{Enter}
 return
+
+; 翻译
+t:: SendInput,^+{B}
 
 ; 播放暂停音乐
 Space:: SendInput,{Media_Play_Pause}

@@ -20,11 +20,14 @@ MouseIsOver(position, winTitle := "") {
 
 ; 快速搜索框
 QuickSearchBar() {
-    Gui, Add, Text,, First name:
-    Gui, Add, Text,, Last name:
-    Gui, Add, Edit, vFirstName ym  ; ym 选项开始一个新的控件列.
-    Gui, Add, Edit, vLastName
-    Gui, Add, Button, default, OK  ; ButtonOK(如果存在)会在此按钮被按下时运行.
-    Gui, Show,, Simple Input Example
-    return  ; 自动运行段结束. 在用户进行操作前脚本会一直保持空闲状态.
+    WinShow, ahk_id %SearchGuiHwnd%
+    TrayTip, %SearchContent%, %SearchGuiHwnd%, 20, 17
+    return
+
+    ; setSearchBarActive:
+    IfWinExist, ahk_id %SearchGuiHwnd%
+    {
+        WinActivate, ahk_id %SearchGuiHwnd%
+    }
+    return
 }
