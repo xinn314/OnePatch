@@ -53,7 +53,10 @@ CapsLock::
 KeyWait, CapsLock
 if (A_ThisHotkey="CapsLock")
 {
-    SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
+    ; 超时释放
+    if (A_TimeSincePriorHotkey > 1000) {
+        SetCapsLockState, off
+    }
     ; 双击粘贴
     If ((A_PriorHotkey = "CapsLock" ) AND (A_TimeSincePriorHotkey < 400))
     {

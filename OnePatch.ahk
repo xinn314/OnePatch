@@ -5,9 +5,9 @@
 global SearchGuiHwnd,SearchContent
 
 ; 修改托盘图标
-IfExist, oneTool.ico
+IfExist, onePatch.ico
 {
-    Menu, TRAY, Icon, oneTool.ico, , 1
+    Menu, TRAY, Icon, onePatch.ico, , 1
 }
 
 ; 功能函数定义
