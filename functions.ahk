@@ -1,4 +1,25 @@
 
+; 显示一个信息
+showMsg(msg, t:=2000)
+{
+    ToolTip, % msg
+    t:=-t
+    settimer, clearToolTip, % t
+}
+
+; 清理信息
+clearToolTip() {
+    ToolTip
+    return
+}
+
+; 弹窗
+alert(str)
+{
+    msgbox, % str
+    return
+}
+
 
 ; 判断鼠标是否在某一范围内
 MouseIsOver(position, winTitle := "") {

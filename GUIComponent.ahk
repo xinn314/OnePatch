@@ -21,7 +21,7 @@ return
 
 ; 响应回车请求
 ButtonSubmit:
-Gui, Submit, NoHide 
+Gui, Submit, Hide 
 ; MsgBox, Content of the edit control: %SearchContent%
 RUN, https://www.google.com/search?q=%SearchContent%
 return
